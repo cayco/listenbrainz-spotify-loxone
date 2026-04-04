@@ -190,8 +190,7 @@ To keep the listening experience varied, the Loxone program alternates which VTI
 
 This is implemented directly in Loxone using a time-based trigger that checks the current weekday parity and reads from the appropriate VTI, constructing the `spotify:playlist:<id>` URI before passing it to the LMS JSON-RPC call. See the screenshot below for an example of how this looks in Loxone Config.
 
-<!-- Add your Loxone Config screenshot here -->
-![Loxone VTI rotation config](./loxone-vti-rotation.png)
+![Loxone VTI rotation config](./lox.png)
 
 ---
 
