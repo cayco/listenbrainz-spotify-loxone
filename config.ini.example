@@ -1,0 +1,19 @@
+[loxone]
+ip = 192.168.1.100
+user = admin
+pass =
+vti_weekly_jams = VTI16
+vti_weekly_exploration = VTI17
+
+[listenbrainz]
+username = your_listenbrainz_username
+token = your_listenbrainz_token
+
+[spotify]
+client_id = your_spotify_client_id
+client_secret = your_spotify_client_secret
+redirect_uri = http://127.0.0.1:9090/callback
+cache_path = /home/youruser/.spotify_cache
+
+[state]
+cache_file = /home/youruser/.listenbrainz_export_cache.json
