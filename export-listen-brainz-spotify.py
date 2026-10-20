@@ -199,11 +199,11 @@ def process_playlist_item(item_spec, context):
         return
 
     print(f"Creating private playlist \x27{playlist_title}\x27 on Spotify...")
-    new_playlist = sp_client.user_playlist_create(
+    new_playlist = context['sp_client'].user_playlist_create(
         context["user_id"], name=playlist_title, public=False
     )
     print("Adding tracks to Spotify...")
-    sp_client.playlist_add_items(new_playlist["id"], track_uris)
+    context['sp_client'].playlist_add_items(new_playlist["id"], track_uris)
 
     playlist_id = new_playlist["id"]
     send_to_loxone(vti, playlist_id)
