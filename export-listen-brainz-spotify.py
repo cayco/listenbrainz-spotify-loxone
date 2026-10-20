@@ -191,8 +191,7 @@ def process_playlist_item(item_spec, context):
 
     print(f"\n--- Processing: {playlist_title} ---")
     print(f"Extracting {len(tracks)} tracks and searching Spotify...")
-    sp_client = context["sp_client"]
-    track_uris = search_spotify_tracks(sp_client, tracks)
+    track_uris = search_spotify_tracks(context["sp_client"], tracks)
 
     if not track_uris:
         print(f"No tracks found on Spotify for \x27{playlist_title}\x27, skipping.")
@@ -205,13 +204,11 @@ def process_playlist_item(item_spec, context):
     print("Adding tracks to Spotify...")
     context['sp_client'].playlist_add_items(new_playlist["id"], track_uris)
 
-    playlist_id = new_playlist["id"]
-    send_to_loxone(vti, playlist_id)
-
-    cache[playlist_mbid] = playlist_id
-    cache[week_cache_key] = playlist_id
+    send_to_loxone(vti, new_playlist["id"])
+    cache[playlist_mbid] = new_playlist["id"]
+    cache[week_cache_key] = new_playlist["id"]
     save_cache(cache)
-    print(f"Cached {playlist_mbid} ({week_cache_key}) -> Spotify {playlist_id}")
+    print(f"Cached {playlist_mbid} ({week_cache_key}) -> Spotify {new_playlist['id']}")
 
 
 def main():
