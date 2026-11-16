@@ -2,7 +2,7 @@
 # pylint: disable=invalid-name
 
 import configparser
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import json
 import os
 import urllib.parse
@@ -309,7 +309,7 @@ def main():
     headers = {"Authorization": f"Token {LB_TOKEN}"}
     jams_playlist, exploration_playlist = fetch_createdfor_playlists(headers)
 
-    today = datetime.utcnow().date()
+    today = datetime.now(timezone.utc).date()
     monday = today - timedelta(days=today.weekday())
     context = {
         "sp_client": sp_client,

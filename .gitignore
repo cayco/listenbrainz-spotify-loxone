@@ -3,3 +3,4 @@ config.ini
 *.json
 __pycache__/
 *.pyc
+.venv/
