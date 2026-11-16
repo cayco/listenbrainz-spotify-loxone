@@ -5,6 +5,10 @@ pass =
 vti_weekly_jams = VTI16
 vti_weekly_exploration = VTI17
 
+[lms]
+url = http://10.0.2.55:9000/jsonrpc.js
+players = aa:aa:cf:58:4c:31,aa:aa:b5:d6:bb:ca
+
 [listenbrainz]
 username = your_listenbrainz_username
 token = your_listenbrainz_token
