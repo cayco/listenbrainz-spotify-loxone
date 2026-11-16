@@ -7,7 +7,7 @@ vti_weekly_exploration = VTI17
 
 [lms]
 url = http://10.0.2.55:9000/jsonrpc.js
-players = aa:aa:cf:58:4c:31,aa:aa:b5:d6:bb:ca
+players = aa:aa:cf:58:4c:31,aa:aa:b5:d6:bb:ca,aa:aa:cf:5e:70:fe,b8:27:eb:8b:d2:1d,d8:3a:dd:00:8d:d8
 
 [listenbrainz]
 username = your_listenbrainz_username

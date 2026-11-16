@@ -24,7 +24,12 @@ LMS_URL = config.get("lms", "url", fallback="http://10.0.2.55:9000/jsonrpc.js")
 LMS_PLAYERS = [
     mac.strip()
     for mac in config.get(
-        "lms", "players", fallback="aa:aa:cf:58:4c:31,aa:aa:b5:d6:bb:ca"
+        "lms",
+        "players",
+        fallback=(
+            "aa:aa:cf:58:4c:31,aa:aa:b5:d6:bb:ca,aa:aa:cf:5e:70:fe,"
+            "b8:27:eb:8b:d2:1d,d8:3a:dd:00:8d:d8"
+        ),
     ).split(",")
     if mac.strip()
 ]
